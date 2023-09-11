@@ -1,0 +1,24 @@
+.project:not(:last-child) {
+  border-bottom: 2px dashed #999;
+  padding-bottom: 10px;
+}
+
+.no-button {
+  background: #fff;
+  border: 2px solid #1b89bc;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-block;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.no-button:hover {
+  background: #1b89bc;
+  border-color: #065b83;
+  color: #fff;
+  text-decoration: none;
+}
+
