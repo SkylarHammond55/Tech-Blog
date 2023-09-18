@@ -1,0 +1,20 @@
+[
+  {
+      "title": "The Future of Artificial Intelligence",
+      "text": "Artificial intelligence is rapidly advancing, with applications in various fields such as healthcare, finance, and autonomous vehicles.",
+      "user_id": 1,
+      "created_at": "9/10/2023"
+  },
+  {
+      "title": "Blockchain Technology Explained",
+      "text": "Blockchain is the foundation of cryptocurrencies like Bitcoin. It offers secure, decentralized, and transparent data storage and transactions.",
+      "user_id": 2,
+      "created_at": "9/11/2023"
+  },
+  {
+      "title": "Web Development Frameworks",
+      "text": "Explore popular web development frameworks like React, Angular, and Vue.js. Each has its strengths for building modern web applications.",
+      "user_id": 3,
+      "created_at": "9/12/2023"
+  }
+]

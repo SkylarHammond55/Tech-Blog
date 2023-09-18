@@ -1,32 +1,50 @@
-const handleFormSubmit = async (event, endpoint) => {
+const loginFormHandler = async (event) => {
   event.preventDefault();
 
-  const username = document.querySelector('#username').value.trim();
-  const password = document.querySelector('#password').value.trim();
+  const username = document.querySelector('#username-login').value.trim();
+  const password = document.querySelector('#password-login').value.trim();
 
   if (username && password) {
-      try {
-          const response = await fetch(endpoint, {
-              method: 'POST',
-              body: JSON.stringify({ username, password }),
-              headers: { 'Content-Type': 'application/json' },
-          });
+      const response = await fetch('/api/users/login', {
+          method: 'POST',
+          body: JSON.stringify({ username, password }),
+          headers: { 'Content-Type': 'application/json' },
+      });
 
-          if (response.ok) {
-              document.location.replace('/dashboard');
-          } else {
-              alert('Failed to login or sign up.');
-          }
-      } catch (error) {
-          console.error('An error occurred:', error);
+      if (response.ok) {
+          document.location.replace('/dashboard');
+      } else {
+          alert(response.statusText);
       }
   }
 };
 
-document.querySelector('#login-form').addEventListener('submit', (event) => {
-  handleFormSubmit(event, '/api/users/login');
-});
+const signupFormHandler = async (event) => {
+  event.preventDefault();
 
-document.querySelector('#signup-form').addEventListener('submit', (event) => {
-  handleFormSubmit(event, '/api/users/signup');
-});
+  const username = document.querySelector('#username-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
+
+  if (username && password) {
+      const response = await fetch('/api/users/', {
+          method: 'POST',
+          body: JSON.stringify({ username, password }),
+          headers: { 'Content-Type': 'application/json' },
+      });
+
+      if (response.ok) {
+          document.location.replace('/dashboard');
+      } else {
+          alert('Failed to sign up.');
+      }
+  }
+};
+
+
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
+
+document
+  .querySelector('.signup-form')
+  .addEventListener('submit', signupFormHandler);
